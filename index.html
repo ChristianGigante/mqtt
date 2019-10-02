@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <title>mows</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body class="bg-info" style="height:100%;">
+  <div class="container-fluid text-center text-white ">
+    <br>
+    <br>
+    <h1>MQTT</h1>
+    <p>My MQTT Web App</p>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 bg-danger">
+          <br>
+          <h1>Broker</h1>
+          Address: <input id="broker" type="text" value="wss://test.mosquitto.org:8081/mqtt" required><br><br>
+          <input id="connect" class="btn btn-primary" type="button" value="Connect">
+          <input id="disconnect" class="btn btn-primary" type="button" value="Disconnect" disabled><br><br>
+          Status: <input id="status" class="btn btn-warning" type="button" value="..........................................."
+            disabled><br><br>
+        </div>
+        <div class="col-lg-4 bg-success">
+          <br>
+          <h1>Publish</h1>
+          Topic: <input id="pubTopic" type="text" placeholder="Input Topic..,"><br><br>
+          Payload: <input id="pubPayload" type="text" placeholder="Input Payload..,"><br><br>
+          <input id="btnPublish" class="btn btn-primary" type="button" value="Publish" disabled>
+        </div>
+        <div class="col-lg-4 bg-warning">
+          <br>
+          <h1>Subscribe</h1>
+          Topic: <input id="subTopic" type="text" placeholder="Input Topic..,"><br><br>
+          <input id="btnSubscribe" class="btn btn-primary" type="button" value="Subscribe" disabled>
+          <input id="btnUnsubscribe" class="btn btn-primary" type="button" value="Unsubscribe" disabled>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <table id="receiver" class="table bg-light table-hover table-responsive-md">
+        <thead class="thead-dark">
+          <th>Topic</th>
+          <th>Payload</th>
+          <th>Time Stamp</th>
+        </thead>
+        <tbody id="msg">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <script src="scripts/browserMqtt.js"></script>
+  <script src="scripts/controller.js"></script>
+
+</body>
+
+</html>
