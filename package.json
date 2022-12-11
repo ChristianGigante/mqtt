@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ChristianGigante/mqtt-gigantech#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mqtt": "^3.0.0"
   },
   "engines": {
